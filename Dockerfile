@@ -13,7 +13,8 @@ RUN apt-get update -y && apt-get install -y \
   liblzma-dev \
   openjdk-8-jdk \
   wget \
-  libssl-dev
+  libssl-dev \
+  libxml2-dev
 
 # change working dir
 WORKDIR /usr/local/bin
@@ -28,5 +29,5 @@ RUN make install
 
 # install R packages
 RUN R --vanilla -e 'install.packages(c("devtools", "BiocManager"), repos="http://cran.us.r-project.org")'
-RUN R --vanilla -e 'BiocManager::install(c("GenVisR"))'
-RUN R --vanilla -e 'install.packages(c("ggplot2", "data.table"))'
+RUN R --vanilla -e 'install.packages(c("ggplot2", "data.table"), repos = "http://cran.us.r-project.org")'
+RUN R --vanilla -e 'BiocManager::install(c("biomaRt"))'
