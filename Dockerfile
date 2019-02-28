@@ -29,5 +29,5 @@ RUN make install
 
 # install R packages
 RUN R --vanilla -e 'install.packages(c("devtools", "BiocManager"), repos="http://cran.us.r-project.org")'
-RUN R --vanilla -e 'install.packages(c("ggplot2", "data.table"), repos = "http://cran.us.r-project.org")'
+RUN R --vanilla -e 'install.packages(c("ggplot2", "data.table", "sequenza"), repos = "http://cran.us.r-project.org")'
 RUN R --vanilla -e 'BiocManager::install(c("biomaRt"))'
