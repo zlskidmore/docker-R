@@ -29,5 +29,5 @@ RUN make install
 
 # install R packages
 RUN R --vanilla -e 'install.packages(c("devtools", "BiocManager"), repos="http://cran.us.r-project.org")'
-RUN R --vanilla -e 'install.packages(c("ggplot2", "data.table", "sequenza"), repos = "http://cran.us.r-project.org")'
-RUN R --vanilla -e 'BiocManager::install(c("biomaRt"))'
+RUN R --vanilla -e 'BiocManager::install(c("biomaRt", "copynumber", "GenVisR", "fgsea", "deseq2", "EBSeq"))'
+RUN R --vanilla -e 'install.packages(c("ggplot2", "data.table", "sequenza", "dplyr", "reshape2", "tidyr", "viridis", "cowplot", "ggalluvial", "msigdbr", "ggdendro", "gridExtra", "deconstructSigs"), repos = "http://cran.us.r-project.org")'
