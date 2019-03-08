@@ -1,5 +1,8 @@
 # work from latest LTS ubuntu release
-FROM ubuntu:16.04
+FROM ubuntu:18.04
+
+# set variables
+ENV r_version 3.5.2
 
 # run update
 RUN apt-get update -y && apt-get install -y \
@@ -21,9 +24,9 @@ RUN apt-get update -y && apt-get install -y \
 WORKDIR /usr/local/bin
 
 # install R
-RUN wget https://cran.r-project.org/src/base/R-3/R-3.5.1.tar.gz
-RUN tar -zxvf R-3.5.1.tar.gz
-WORKDIR /usr/local/bin/R-3.5.1
+RUN wget https://cran.r-project.org/src/base/R-3/R-${r_version}.tar.gz
+RUN tar -zxvf R-${r_version}.tar.gz
+WORKDIR /usr/local/bin/R-${r_version}
 RUN ./configure --prefix=/usr/local/ --with-x=no
 RUN make
 RUN make install
