@@ -2,7 +2,7 @@
 FROM ubuntu:18.04
 
 # set variables
-ENV r_version 3.5.2
+ENV r_version 3.6.0
 
 # run update
 RUN apt-get update -y && apt-get install -y \
