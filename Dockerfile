@@ -33,5 +33,5 @@ RUN make install
 
 # install R packages
 RUN R --vanilla -e 'install.packages(c("devtools", "BiocManager"), repos="http://cran.us.r-project.org")'
-RUN R --vanilla -e 'BiocManager::install(c("biomaRt", "copynumber", "GenVisR", "fgsea", "deseq2", "EBSeq", "BSgenome.Hsapiens.UCSC.hg19", "BSgenome.Hsapiens.UCSC.hg38", "TxDb.Hsapiens.UCSC.hg19.knownGene", "TxDb.Hsapiens.UCSC.hg38.knownGene", "org.Hs.eg.db"))'
-RUN R --vanilla -e 'install.packages(c("ggplot2", "data.table", "sequenza", "dplyr", "reshape2", "tidyr", "viridis", "cowplot", "ggalluvial", "msigdbr", "ggdendro", "gridExtra", "deconstructSigs"), repos = "http://cran.us.r-project.org")'
+RUN R --vanilla -e 'BiocManager::install(c("biomaRt", "copynumber", "GenVisR", "fgsea", "deseq2", "EBSeq", "BSgenome.Hsapiens.UCSC.hg19", "BSgenome.Hsapiens.UCSC.hg38", "TxDb.Hsapiens.UCSC.hg19.knownGene", "TxDb.Hsapiens.UCSC.hg38.knownGene", "org.Hs.eg.db", "NanoStringDiff"))'
+RUN R --vanilla -e 'install.packages(c("ggplot2", "data.table", "sequenza", "dplyr", "reshape2", "tidyr", "viridis", "cowplot", "ggalluvial", "msigdbr", "ggdendro", "gridExtra", "deconstructSigs", "tidyverse", ), repos = "http://cran.us.r-project.org")'
