@@ -22,7 +22,9 @@ RUN apt-get update -y && apt-get install -y \
   libpcre2-dev \
   libfreetype6-dev \
   libfontconfig1-dev \
-  git
+  git \
+  vim \
+  less
 
 # change working dir
 WORKDIR /usr/local/bin
@@ -39,8 +41,6 @@ RUN make install
 RUN R --vanilla -e 'install.packages(c("devtools", "BiocManager"), repos="http://cran.us.r-project.org")'
 RUN R --vanilla -e 'BiocManager::install(c("biomaRt", "copynumber", "GenVisR", "fgsea", "deseq2", "EBSeq", "BSgenome.Hsapiens.UCSC.hg19", "BSgenome.Hsapiens.UCSC.hg38", "TxDb.Hsapiens.UCSC.hg19.knownGene", "TxDb.Hsapiens.UCSC.hg38.knownGene", "org.Hs.eg.db", "NanoStringDiff", "ATACseqQC", "BSgenome.Mmusculus.UCSC.mm10", "TxDb.Mmusculus.UCSC.mm10", "BiocGenerics"))'
 RUN R --vanilla -e 'install.packages(c("optparse", "mdscore", "ggplot2", "data.table", "sequenza", "dplyr", "reshape2", "tidyr", "viridis", "cowplot", "ggalluvial", "msigdbr", "ggdendro", "gridExtra", "deconstructSigs", "tidyverse", "splitstackshape", "fastcluster", "gtools", "kableExtra", "mutSignatures"), repos = "http://cran.us.r-project.org")'
-RUN R --vanilla -e 'BiocManager::install("BiocGenerics")'
-RUN R --vanilla -e 'devtools::install_github("mskilab/fragCounter")'
 
 # copy any one-off R scripts over
 RUN mkdir -p /opt/scripts/R
