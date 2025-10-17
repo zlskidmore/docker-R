@@ -1,8 +1,8 @@
 # work from latest LTS ubuntu release
-FROM ubuntu:18.04
+FROM ubuntu:24.04
 
 # set variables
-ENV r_version 4.1.0
+ENV r_version=4.5.1
 
 # run update
 RUN apt-get update -y && apt-get install -y \
